@@ -31,7 +31,7 @@ No external servers. No data sent anywhere. Everything stays in your browser.
 ## Compatibility
 
 - ✅ Chrome, Edge, Brave (any Chromium-based browser)
-- 🔑 Requires **Google AI Pro** plan
+- ✅ Requires a Google AI account with usage limits
 
 ## Credits
 
