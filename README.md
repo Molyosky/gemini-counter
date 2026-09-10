@@ -1,49 +1,40 @@
-# Claude Counter
+# 💎 Gemini Counter
 
-A minimal browser extension that shows token count, cache timer, and usage bars on claude.ai.
+A Chrome extension that shows your real **Google AI Pro** usage directly in the Gemini chat interface — inspired by and based on [claude-counter](https://github.com/she-llac/claude-counter) by [@she-llac](https://github.com/she-llac).
 
-![Claude Counter screenshot](./screenshot.png)
+## Preview
+
 
 ## Features
 
-- **Token count** — Approximate token count for the current conversation, with a mini progress bar against the 200k context limit
-- **Cache timer** — Countdown showing how long the conversation remains cached (cheaper to continue)
-- **Usage bars** — Session (5-hour) and weekly (7-day) usage from Claude's native API, with progress bars and reset countdowns (more accurate than the rounded /usage page)
+- **● Live** — fetches real data from `gemini.google.com/usage` automatically
+- Session (5h) and weekly usage bars shown below the chat input
+- Color coded bars: 🔵 normal → 🟡 60% → 🔴 90%
+- Auto-refreshes every 3 minutes + manual ↻ button
+- Shows reset times for session and weekly limits
+- Works on any Gemini page — no need to open the usage tab manually
 
 ## Installation
 
-**Chrome / Edge / Chromium**
-
-1. Download [`claude-counter-0.4.2.zip`](../../releases/download/v0.4.2/claude-counter-0.4.2.zip)
-2. Go to `chrome://extensions` and enable **Developer mode**
-3. Drag and drop the zip onto the page
-
-**Firefox**
-
-1. Download [`claude-counter-0.4.2.xpi`](../../releases/download/v0.4.2/claude-counter-0.4.2.xpi)
-2. Drag it into any Firefox window and click **Add**
-
-**Userscript**
-
-1. Install the userscript from [`claude-counter.user.js`](./userscript/claude-counter.user.js)
+1. Download the latest ZIP from [Releases](../../releases) and unzip it
+2. Go to `chrome://extensions`
+3. Enable **Developer mode** (toggle top right)
+4. Click **Load unpacked** → select the unzipped folder
 
 ## How it works
 
-- Intercepts Claude's API responses to read conversation data and usage info
-- Uses a vendored tokenizer (`o200k_base`) for approximate token counting
-- Uses Claude’s `/usage` plus live SSE `message_limit` data; the SSE provides exact, unrounded utilization fractions, so the progress bars are more accurate than the rounded percentages shown on Claude’s native /usage page
-- Watches for DOM changes to inject UI elements as you navigate
+Opens `gemini.google.com/usage` in a hidden background tab, reads your real usage percentages from the rendered DOM, then closes the tab. Refreshes every 3 minutes automatically.
 
-## Privacy
+No external servers. No data sent anywhere. Everything stays in your browser.
 
-- All data stays local — no external servers, no tracking
-- Reads your `lastActiveOrg` cookie to query Claude's `/usage` endpoint
-- Makes requests only to `claude.ai`
+## Compatibility
+
+- ✅ Chrome, Edge, Brave (any Chromium-based browser)
+- 🔑 Requires **Google AI Pro** plan
 
 ## Credits
 
-- Token counting via [gpt-tokenizer](https://github.com/niieani/gpt-tokenizer) (MIT)
-- Inspired by [Claude Usage Tracker](https://github.com/lugia19/Claude-Usage-Extension) by lugia19
+Based on [claude-counter](https://github.com/she-llac/claude-counter) by [@she-llac](https://github.com/she-llac) — the original extension for tracking Claude usage.
 
 ## License
 
