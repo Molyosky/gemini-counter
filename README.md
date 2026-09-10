@@ -28,6 +28,8 @@ Opens `gemini.google.com/usage` in a hidden background tab, reads your real usag
 
 No external servers. No data sent anywhere. Everything stays in your browser.
 
+> ⚠️ When fetching data, a new tab will briefly open and close automatically — this is normal behavior.
+
 ## Compatibility
 
 - ✅ Chrome, Edge, Brave (any Chromium-based browser)
