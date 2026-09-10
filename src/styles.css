@@ -1,0 +1,71 @@
+#gc-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 24px;
+  font-family: 'Google Sans', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #9aa0a6;
+  user-select: none;
+}
+
+/* Sesión — crece igual que Semanal */
+.gc-left, .gc-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Sesión: label + pct a la izquierda, barra se estira */
+.gc-left  { justify-content: flex-start; }
+
+/* Semanal: barra primero, pct + label a la derecha */
+.gc-right { justify-content: flex-end; }
+
+.gc-label { color: #9aa0a6; white-space: nowrap; font-size: 13px; }
+
+.gc-pct {
+  font-weight: 700; color: #e8eaed;
+  font-size: 18px; font-variant-numeric: tabular-nums;
+  min-width: 46px;
+}
+
+/* Sesión pct alineado a la derecha de su slot */
+.gc-left .gc-pct  { text-align: left; }
+.gc-right .gc-pct { text-align: right; }
+
+.gc-reset { color: #5f6368; font-size: 11px; white-space: nowrap; }
+
+.gc-sep { width: 1px; height: 18px; background: #3c4043; flex-shrink: 0; }
+
+.gc-track {
+  flex: 1;          /* barra ocupa todo el espacio disponible */
+  min-width: 80px;
+  max-width: 220px;
+  height: 5px; background: #3c4043;
+  border-radius: 99px; overflow: hidden;
+}
+.gc-fill { height: 100%; border-radius: 99px; transition: width 0.5s ease, background 0.3s; }
+.gc-ok     { background: #8ab4f8; }
+.gc-warn   { background: #fdd663; }
+.gc-danger { background: #f28b82; }
+
+.gc-actions {
+  display: flex; align-items: center; gap: 4px; flex-shrink: 0;
+}
+
+.gc-status {
+  font-size: 10px; font-weight: 700; border-radius: 4px;
+  padding: 2px 7px; white-space: nowrap;
+}
+.gc-live { background: #1e3a2a; color: #81c995; }
+.gc-est  { background: #3c3a1e; color: #fdd663; }
+.gc-sync { color: #8ab4f8; }
+
+.gc-btn {
+  background: none; border: none; color: #5f6368;
+  cursor: pointer; font-size: 14px; padding: 0 3px; border-radius: 4px;
+}
+.gc-btn:hover { color: #e8eaed; }
