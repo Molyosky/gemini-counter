@@ -4,11 +4,7 @@ A Chrome extension that shows your real **Google AI Pro** usage directly in the 
 
 ## Preview
 
-```
-+ Preguntarle a Gemini          Flash-Lite  🎤
-
-Sesión: 1% · 23:26 ████░░░░░░  ░░░░░░░░░░ 25 may · 11% Semanal  ↻ ● Live
-```
+![Gemini Counter](SCREENSHOT.png)
 
 ## Features
 
